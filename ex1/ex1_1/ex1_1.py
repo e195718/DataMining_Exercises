@@ -20,7 +20,7 @@ if __name__ == '__main__':
     ax.set_xlabel("x", fontsize = 10)
     ax.set_ylabel("y", fontsize = 10)
 
-    x = np.arange(-1, 1, np.pi/36)
+    x = np.arange(-1.0, 1.1, 0.1)
     ax.plot(x, true_function(x), label = "y = sin(π*x*0.8)*10")
 
     ax.legend(loc = "lower right")
