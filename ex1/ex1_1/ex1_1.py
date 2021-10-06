@@ -10,19 +10,19 @@ def true_function(x):
     y = np.sin(np.pi * x * 0.8) * 10
     return y
 
-fig = plt.figure(figsize=(4, 4))
-ax = fig.add_subplot(111)
-
-ax.set_xlabel("x", fontsize = 10)
-ax.set_ylabel("y", fontsize = 10)
-
-x = np.arange(-1, 1, np.pi/36)
-ax.plot(x, true_function(x), label = "y = sin(π*x*0.8)*10")
-
-ax.legend(loc = "lower right")
-
-plt.show()
-
 if __name__ == '__main__':
     import doctest
     doctest.testmod(verbose=True)
+
+    fig = plt.figure(figsize=(4, 4))
+    ax = fig.add_subplot(111)
+
+    ax.set_xlabel("x", fontsize = 10)
+    ax.set_ylabel("y", fontsize = 10)
+
+    x = np.arange(-1, 1, np.pi/36)
+    ax.plot(x, true_function(x), label = "y = sin(π*x*0.8)*10")
+
+    ax.legend(loc = "lower right")
+
+    plt.show()
