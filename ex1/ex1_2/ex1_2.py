@@ -7,19 +7,22 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-random.seed(0)
+def plot_point():
+    random.seed(0)
+    cols = ['観測点', '真値']
+    global df 
+    df= pd.DataFrame(index=[], columns=cols)
 
-cols = ['観測点', '真値']
-df = pd.DataFrame(index=[], columns=cols)
-
-for i in range(20):
-    x = random.uniform(-1,1)
-    y = true_function(x)
-    record = pd.Series([x,y], index=df.columns)
-    df = df.append(record, ignore_index=True)
+    for i in range(20):
+        x = random.uniform(-1,1)
+        y = true_function(x)
+        record = pd.Series([x,y], index=df.columns)
+        df = df.append(record, ignore_index=True)
+    return df
 
 
 if __name__ == '__main__':
+    plot_point()
     fig = plt.figure(figsize=(4, 4))
     ax = fig.add_subplot(111)
 
